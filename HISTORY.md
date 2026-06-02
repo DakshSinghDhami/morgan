@@ -1,6 +1,10 @@
-unreleased
+1.11.0 / 2026-06-02
 ===================
   * add `:pid` token
+
+  Security Fix:
+  * Escape control characters in `:remote-user` token to prevent log injection 
+    * Fixes [CVE-2026-5078](https://www.cve.org/CVERecord?id=CVE-2026-5078) [GHSA-4vj7-5mj6-jm8m](https://github.com/expressjs/morgan/security/advisories/GHSA-4vj7-5mj6-jm8m)
 
 1.10.1 / 2025-07-17
 ===================
