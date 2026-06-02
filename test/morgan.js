@@ -668,9 +668,10 @@ describe('morgan()', function () {
           cb(null, null, line)
         })
 
+        // 'evil\nuser:x' (literal backslash) in Base64
         request(createServer(':remote-user', { stream: stream }))
           .get('/')
-          .set('Authorization', 'Basic ' + Buffer.from('evil\\nuser:x').toString('base64'))
+          .set('Authorization', 'Basic ZXZpbFxudXNlcjp4')
           .expect(200, cb)
       })
 
